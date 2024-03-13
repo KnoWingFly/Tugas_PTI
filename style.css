@@ -1,3 +1,12 @@
 body{
   background-color: yellow;
 }
+
+.container-fluid {
+  max-width: 90%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 50px;
+}
