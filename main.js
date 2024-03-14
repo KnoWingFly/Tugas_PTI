@@ -17,7 +17,31 @@ $(document).ready(function() {
       { "NIM": "00000000001", "nama": "Admin", "alamat": "Tangerang" },
       { "NIM": "00000000001", "nama": "Admin", "alamat": "Tangerang" },
     ];
-  
+
+    var alertTime = new Date();
+
+    function showAlert() {
+        var x = document.getElementById("customAlert");
+        x.style.display = "block";
+        document.getElementById("alertTime").innerHTML = "Just now~";
+        alertTime = new Date();
+    }
+    
+    $(document).ready(function() {
+        $('.alert').alert();
+    });
+    
+    setInterval(function() {
+        var now = new Date();
+        var diff = Math.floor((now - alertTime) / 1000);
+        if (diff < 60) {
+            document.getElementById("alertTime").innerHTML = diff + " seconds ago~";
+        } else {
+            var minutes = Math.floor(diff / 60);
+            document.getElementById("alertTime").innerHTML = minutes + " minutes ago~";
+        }
+    }, 5000);
+
     var table = $("#datatable").DataTable({
         data: data,
         columns: [
@@ -47,6 +71,7 @@ $(document).ready(function() {
     
         data.push({NIM: NIM, nama: nama, alamat: alamat});
         table.clear().rows.add(data).draw();
+        showAlert();
     
         $('#inputNIM').val('');
         $('#inputnama').val('');
