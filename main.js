@@ -21,16 +21,15 @@ $(document).ready(function() {
     var alertTime = new Date();
 
     function showAlert() {
-        var x = document.getElementById("customAlert");
-        x.style.display = "block";
-        document.getElementById("alertTime").innerHTML = "Just now~";
-        alertTime = new Date();
+        $('#myAlert').slideDown();
     }
     
     $(document).ready(function() {
-        $('.alert').alert();
+        $('.closeBtn').on('click', function() {
+            $(this).closest('.alert').slideUp();
+        });
     });
-    
+        
     setInterval(function() {
         var now = new Date();
         var diff = Math.floor((now - alertTime) / 1000);
@@ -76,7 +75,6 @@ $(document).ready(function() {
         $('#inputNIM').val('');
         $('#inputnama').val('');
         $('#inputalamat').val('');
-    
     });
 
     $('body').on('click', '.deleteButton', function(){
