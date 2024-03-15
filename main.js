@@ -52,8 +52,8 @@ $(document).ready(function() {
                 data: null,
                 render: function ( data, type, row, meta ) {
                     return '<button type="button" class="btn btn-primary editButton" data-index="'
-                     + meta.row +'"><img src="asset/pencil-square.svg" style="filter: invert(1);"/> Ubah</button>' + "     " +
-                    '<button type="button" class="btn btn-danger deleteButton" data-index="' + meta.row + '"><img src="asset/eraser-fill.svg" style="filter: invert(1);"/> Hapus</button>';
+                     + meta.row +'"><img src="Asset/pencil-square.svg" style="filter: invert(1);"/> Ubah</button>' + "     " +
+                    '<button type="button" class="btn btn-danger deleteButton" data-index="' + meta.row + '"><img src="Asset/eraser-fill.svg" style="filter: invert(1);"/> Hapus</button>';
                 }
             }
         ],
