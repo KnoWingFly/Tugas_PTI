@@ -12,16 +12,15 @@
 </head>
 
 <body>
-
     <!--------------------------------------------------------------------------------------------- Header --------------------------------------------------------------------------------------------->
     <div class="container-fluid mt-5">
         <div class="header text-center text-md-start">
-            <h1>DATA MAHASISWA</h1>
+            <h1><strong>MAHASISWA</strong></h1>
         </div>
 
-        <div class="second-header">
+        <div class="second-header mb-5">
             <div id="jam" class="row">
-                <h1 class="col-12 col-md-6 text-center text-md-start">Hello ...</h1>
+                <h1 class="col-12 col-md-6 text-center text-md-start"><strong>Hello...</strong></h1>
                 <span id="clock" class="col-12 col-md-6 text-center text-md-end h1"></span>
             </div>
         </div>
@@ -112,36 +111,37 @@
     <div id="addData">
         <div id="positionAddData">
             <div class="row mt-2">
-                <div class="col-6 col-md-3 mt-2">
+                <div class="col-12 col-md-3 mt-2 text-center text-md-start">
                     <h3><strong>NIM</strong></h3>
                 </div>
-                <div class="col-6 col-md-9">
-                    <input type="text" id="inputNIM" class="form-control" placeholder="Nomor Induk Mahasiswa" />
+                <div class="col-12 col-md-9 text-center text-start">
+                    <input type="text" id="inputNIM" class="form-control" placeholder="Student ID Number" />
                 </div>
             </div>
 
             <div class="row mt-2">
-                <div class="col-6 col-md-3 mt-2">
+                <div class="col-12 col-md-3 mt-2 text-center text-md-start">
                     <h3><strong>Full Name</strong></h3>
                 </div>
-                <div class="col-6 col-md-9">
-                    <input type="text" id="inputnama" class="form-control" placeholder="Nama Lengkap" />
+                <div class="col-12 col-md-9 text-center text-start">
+                    <input type="text" id="inputnama" class="form-control" placeholder="Full Name" />
                 </div>
             </div>
 
             <div class="row mt-2">
-                <div class="col-6 col-md-3 mt-2">
-                    <h3><strong>Alamat</strong></h3>
+                <div class="col-12 col-md-3 mt-2 text-center text-md-start">
+                    <h3><strong>Adress</strong></h3>
                 </div>
-                <div class="col-6 col-md-9">
-                    <input type="text" id="inputalamat" class="form-control" placeholder="Alamat Tempat Tinggal Asal" />
+                <div class="col-12 col-md-9 text-center text-start">
+                    <input type="text" id="inputalamat" class="form-control"
+                        placeholder="Original Residential Address" />
                 </div>
             </div>
         </div>
 
-        <div class="row text-center text-md-end mt-1 me-2">
+        <div class="col-12 row text-center text-md-end ms-1">
             <div class="justify-content-center mb-4">
-                <button type="button" class="btn btn-dark">
+                <button type="button" class="btn btn-dark mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
                         class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z" />
@@ -150,7 +150,7 @@
                     </svg>
                     Reset
                 </button>
-                <button type="button" id="addButton" class="btn btn-dark">
+                <button type="button" id="addButton" class="btn btn-dark mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
                         class="bi bi-plus-lg" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -162,6 +162,46 @@
         </div>
     </div>
 
+    <footer class="d-flex flex-column flex-md-row justify-content-between text-white bg-dark p-5 pb-2">
+        <div id="bawahan" class="text-center w-100">
+            <div class="row mx-4">
+
+                <div
+                    class="h3 d-flex flex-column col-md-6 col-12 mb-5 mt-5 pt-5 justify-content-center align-items-center align-items-md-start text-start text-md-start">
+
+                    <p>Contributor</p>
+
+                    <table>
+
+                        <tr>
+                            <td>- Fernando Sunarto</td>
+                        </tr>
+                        <tr>
+                            <td>- Fabian Dustin Candra</td>
+                        </tr>
+                        <tr>
+                            <td>- Steven Jonathan</td>
+                        </tr>
+                        <tr>
+                            <td>- Anggatha Chandra Virya</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <div
+                    class="d-flex flex-column col-md-6 col-12 text-end mb-0 mt-0 justify-content-center align-items-center align-items-md-end">
+                    <img id="image" src="Asset/UMN2.png" class="img-fluid" />
+                </div>
+
+                <div id="copyright" class="d-flex flex-column align-items-md-end mb-3 text-center text-md-end mt-4">
+                    <h6>© Copyright 2024</h6>
+                </div>
+
+            </div>
+        </div>
+    </footer>
     <!---------------------------------------------------------------------------------------------framework & connct main.js--------------------------------------------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="main.js"></script>
@@ -169,48 +209,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    </div>
 </body>
-
-<footer class="d-flex flex-column flex-md-row justify-content-between text-white bg-dark p-5 pb-2">
-    <div id="bawahan" class="text-center w-100">
-        <div class="row mx-4">
-
-            <div
-                class="h3 d-flex flex-column col-md-6 col-12 mb-5 mt-5 pt-5 justify-content-center align-items-center align-items-md-start text-center text-md-start">
-
-                <p>Contributor</p>
-
-                <table>
-
-                    <tr>
-                        <td>- Fernando Sunarto</td>
-                    </tr>
-                    <tr>
-                        <td>- Fabian Dustin Candra</td>
-                    </tr>
-                    <tr>
-                        <td>- Steven Jonathan</td>
-                    </tr>
-                    <tr>
-                        <td>- Anggatha Chandra Virya</td>
-                    </tr>
-
-                </table>
-
-            </div>
-
-            <div
-                class="d-flex flex-column col-md-6 col-12 text-end mb-0 mt-0 justify-content-center align-items-center align-items-md-end">
-                <img id="image" src="Asset/UMN2.png" class="img-fluid" />
-            </div>
-
-            <div id="copyright" class="d-flex flex-column align-items-md-end mb-3 text-center text-md-end mt-4">
-                <h6>© Copyright 2024</h6>
-            </div>
-
-        </div>
-    </div>
-</footer>
 
 </html>

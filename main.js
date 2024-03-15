@@ -130,15 +130,8 @@ $(document).ready(function () {
 
         var period = "";
 
-        if (h >= 12) {
-            period = "PM";
-        }
-        else {
-            period = "AM";
-        }
-
         if (h > 12) {
-            h = h - 12;
+            h = h;
         }
         else if (h == 0) {
             h = 12;
@@ -148,7 +141,7 @@ $(document).ready(function () {
         m = update(m);
         s = update(s);
 
-        document.getElementById('clock').innerText = h + " : " + m + " : " + s + " : " + period;
+        document.getElementById('clock').innerText = h + " : " + m + " : " + s  + period;
 
         setTimeout(Time, 1000);
     }
