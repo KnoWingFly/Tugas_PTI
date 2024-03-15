@@ -7,12 +7,20 @@ body {
   margin-top: 50px;
 }
 
+#header {
+  background-color: black;
+}
+
 #datatable th {
   text-align: left;
 }
 
 #datatable td {
   text-align: left;
+}
+
+#NIM{
+  background-color: rgb(207, 207, 207);
 }
 
 .alertContainer {
