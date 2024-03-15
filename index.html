@@ -103,10 +103,10 @@
 
 <!--------------------------------------------------------------------------------------------- Form --------------------------------------------------------------------------------------------->
         <div id="addData">
-
-            <div class="row">
-                <div class="col-4 col-md-3">
-                    <p>NIM</p>
+            <div id="positionAddData">
+            <div class="row mt-2">
+                <div class="col-4 col-md-3 mt-2">
+                    <h3><strong>NIM</strong></h3>
                 </div>
                 <div class=" col-8 col-md-9">
                     <input type="text" id="inputNIM" class="form-control" placeholder="Nomor Induk Mahasiswa" />
@@ -114,8 +114,8 @@
             </div>
 
             <div class="row mt-2">
-                <div class="col-4 col-md-3">
-                    <p>Nama Lengkap</p>
+                <div class="col-4 col-md-3 mt-2">
+                    <h3><strong>Nama Lengkap</strong></h3>
                 </div>
                 <div class=" col-8 col-md-9">
                     <input type="text" id="inputnama" class="form-control" placeholder="Nama Lengkap" />
@@ -123,33 +123,34 @@
             </div>
 
             <div class="row mt-2">
-                <div class="col-4 col-md-3">
-                    <p>Alamat</p>
+                <div class="col-4 col-md-3 mt-2">
+                    <h3><strong>Alamat</strong></h3>
                 </div>
                 <div class="col-8 col-md-9">
                     <input type="text" id="inputalamat" class="form-control" placeholder="Alamat Tempat Tinggal Asal" />
                 </div>
             </div>
-
-            <div class="row text-center text-md-end mt-3">
-                <div class="justify-content-center">
-                    <button type="button" class="btn btn-warning">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            </div>
+            
+            <div class="row text-center text-md-end mt-1 me-2">
+                <div class="justify-content-center mb-4">
+                    <button type="button" class="btn btn-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
                             class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z" />
                             <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466" />
                         </svg>
-                        Reset
+                            Reset
                     </button>
-                    <button type="button" id="addButton" class="btn btn-success">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <button type="button" id="addButton" class="btn btn-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
                         </svg>
                         Tambah
                     </button>
                 </div>
             </div>
-        </div>
+    </div>
 
 <!---------------------------------------------------------------------------------------------framework & connct main.js--------------------------------------------------------------------------------------------->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
