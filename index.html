@@ -13,196 +13,204 @@
 
 <body>
 
-<!--------------------------------------------------------------------------------------------- Header --------------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------- Header --------------------------------------------------------------------------------------------->
     <div class="container-fluid mt-5">
-        <div class="header">
+        <div class="header text-center text-md-start">
             <h1>DATA MAHASISWA</h1>
         </div>
-        
+
         <div class="second-header">
-            <h1>Hello ...</h2align-items-center align-items-md-end>
-                <div id="jam">
-                    <p>Time : </p>
-                    <span id="clock"></span>
-                </div>
+            <div id="jam" class="row">
+                <h1 class="col-12 col-md-6 text-center text-md-start">Hello ...</h1>
+                <span id="clock" class="col-12 col-md-6 text-center text-md-end h1"></span>
+            </div>
         </div>
     </div>
-<!--------------------------------------------------------------------------------------------- Tabel --------------------------------------------------------------------------------------------->
-        <table id="datatable"class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">NIM</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">Pengaturan</th>
-                </tr>
-            </thead>
+    <!--------------------------------------------------------------------------------------------- Tabel --------------------------------------------------------------------------------------------->
+    <table id="datatable" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">NIM</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Pengaturan</th>
+            </tr>
+        </thead>
 
-            <tbody >
-            </tbody>
-        </table>
+        <tbody>
+        </tbody>
+    </table>
 
-<!--------------------------------------------------------------------------------------------- Modal --------------------------------------------------------------------------------------------->
-        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
+    <!--------------------------------------------------------------------------------------------- Modal --------------------------------------------------------------------------------------------->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="editModal">Edit Data</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editModal">Edit Data</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-                    <div class="modal-body">
-                        <form id="edit">
-                            <div class="row">
-                                <div class="col-4 col-md-3">
-                                    <p>NIM</p>
-                                </div>
-                                <div class=" col-8 col-md-9">
-                                    <input type="text" id="NIM" class="form-control" readonly>
-                                </div>
+                <div class="modal-body">
+                    <form id="edit">
+                        <div class="row">
+                            <div class="col-4 col-md-3">
+                                <p>NIM</p>
                             </div>
-                
-                            <div class="row mt-2">
-                                <div class="col-4 col-md-3">
-                                    <p>Nama Lengkap</p>
-                                </div>
-                                <div class=" col-8 col-md-9">
-                                    <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap">
-                                </div>
+                            <div class=" col-8 col-md-9">
+                                <input type="text" id="NIM" class="form-control" readonly>
                             </div>
-                
-                            <div class="row mt-2">
-                                <div class="col-4 col-md-3">
-                                    <p>Alamat</p>
-                                </div>
-                                <div class="col-8 col-md-9">
-                                    <input type="text" id="alamat" class="form-control" placeholder="Alamat Tempat Tinggal Asal">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                            </svg>
-                            Cancel
-                        </button>
-                        <button type="button" id="savedata" class="btn btn-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy" viewBox="0 0 16 16">
-                                <path d="M11 2H9v3h2z"/>
-                                <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z"/>
-                            </svg>
-                            Save!
-                        </button>
-                    </div>
+                        <div class="row mt-2">
+                            <div class="col-4 col-md-3">
+                                <p>Nama Lengkap</p>
+                            </div>
+                            <div class=" col-8 col-md-9">
+                                <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap">
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-4 col-md-3">
+                                <p>Alamat</p>
+                            </div>
+                            <div class="col-8 col-md-9">
+                                <input type="text" id="alamat" class="form-control"
+                                    placeholder="Alamat Tempat Tinggal Asal">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                        </svg>
+                        Cancel
+                    </button>
+                    <button type="button" id="savedata" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-floppy" viewBox="0 0 16 16">
+                            <path d="M11 2H9v3h2z" />
+                            <path
+                                d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
+                        </svg>
+                        Save!
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <hr>
+    <hr>
 
-<!--------------------------------------------------------------------------------------------- Form --------------------------------------------------------------------------------------------->
-        <div id="addData">
-            <div id="positionAddData">
+    <!--------------------------------------------------------------------------------------------- Form --------------------------------------------------------------------------------------------->
+    <div id="addData">
+        <div id="positionAddData">
             <div class="row mt-2">
-                <div class="col-4 col-md-3 mt-2">
+                <div class="col-6 col-md-3 mt-2">
                     <h3><strong>NIM</strong></h3>
                 </div>
-                <div class=" col-8 col-md-9">
+                <div class="col-6 col-md-9">
                     <input type="text" id="inputNIM" class="form-control" placeholder="Nomor Induk Mahasiswa" />
                 </div>
             </div>
 
             <div class="row mt-2">
-                <div class="col-4 col-md-3 mt-2">
-                    <h3><strong>Nama Lengkap</strong></h3>
+                <div class="col-6 col-md-3 mt-2">
+                    <h3><strong>Full Name</strong></h3>
                 </div>
-                <div class=" col-8 col-md-9">
+                <div class="col-6 col-md-9">
                     <input type="text" id="inputnama" class="form-control" placeholder="Nama Lengkap" />
                 </div>
             </div>
 
             <div class="row mt-2">
-                <div class="col-4 col-md-3 mt-2">
+                <div class="col-6 col-md-3 mt-2">
                     <h3><strong>Alamat</strong></h3>
                 </div>
-                <div class="col-8 col-md-9">
+                <div class="col-6 col-md-9">
                     <input type="text" id="inputalamat" class="form-control" placeholder="Alamat Tempat Tinggal Asal" />
                 </div>
             </div>
+        </div>
+
+        <div class="row text-center text-md-end mt-1 me-2">
+            <div class="justify-content-center mb-4">
+                <button type="button" class="btn btn-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                        class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z" />
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466" />
+                    </svg>
+                    Reset
+                </button>
+                <button type="button" id="addButton" class="btn btn-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                    </svg>
+                    Tambah
+                </button>
             </div>
-            
-            <div class="row text-center text-md-end mt-1 me-2">
-                <div class="justify-content-center mb-4">
-                    <button type="button" class="btn btn-dark">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
-                            class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z" />
-                            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466" />
-                        </svg>
-                            Reset
-                    </button>
-                    <button type="button" id="addButton" class="btn btn-dark">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
-                        </svg>
-                        Tambah
-                    </button>
-                </div>
-            </div>
+        </div>
     </div>
 
-<!---------------------------------------------------------------------------------------------framework & connct main.js--------------------------------------------------------------------------------------------->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="main.js"></script>
-        <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+    <!---------------------------------------------------------------------------------------------framework & connct main.js--------------------------------------------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     </div>
 </body>
 
-<footer class=" text-strong rounded">
-<div id="bawahan">
-    <div class="row mx-4">
+<footer class="d-flex flex-column flex-md-row justify-content-between text-white bg-dark p-5 pb-2">
+    <div id="bawahan" class="text-center w-100">
+        <div class="row mx-4">
 
-        <div
-            class="h3 d-flex flex-column col-md-4 col-12 mb-5 mt-5 pt-5 justify-content-center align-items-center align-items-md-start text-center text-md-start">
+            <div
+                class="h3 d-flex flex-column col-md-6 col-12 mb-5 mt-5 pt-5 justify-content-center align-items-center align-items-md-start text-center text-md-start">
 
-            <p>Contributor</p>
+                <p>Contributor</p>
 
-            <table>
+                <table>
 
-                <tr>
-                    <td>- Fernando Sunarto</td>
-                </tr>
-                <tr>
-                    <td>- Fabian Dustin Candra</td>
-                </tr>
-                <tr>
-                    <td>- Steven Jonathan</td>
-                </tr>
-                <tr>
-                    <td>- Anggatha Chandra Virya</td>
-                </tr>
+                    <tr>
+                        <td>- Fernando Sunarto</td>
+                    </tr>
+                    <tr>
+                        <td>- Fabian Dustin Candra</td>
+                    </tr>
+                    <tr>
+                        <td>- Steven Jonathan</td>
+                    </tr>
+                    <tr>
+                        <td>- Anggatha Chandra Virya</td>
+                    </tr>
 
-            </table>
+                </table>
+
+            </div>
+
+            <div
+                class="d-flex flex-column col-md-6 col-12 text-end mb-0 mt-0 justify-content-center align-items-center align-items-md-end">
+                <img id="image" src="Asset/UMN2.png" class="img-fluid" />
+            </div>
+
+            <div id="copyright" class="d-flex flex-column align-items-md-end mb-3 text-center text-md-end mt-4">
+                <h6>© Copyright 2024</h6>
+            </div>
 
         </div>
-
-        <div
-            class="d-flex flex-column col-md-8 col-12 text-end mb-0 mt-0 justify-content-center align-items-center align-items-md-end">
-            <img id="image" src="Asset/UMN2.png" class="img-fluid" />
-        </div>
-
-        <div id="copyright" class="d-flex flex-column align-items-md-end mb-3 text-center text-md-end mt-4">
-            <h6>© Copyright 2024</h6>
-        </div>
-
     </div>
-</div>
 </footer>
+
 </html>

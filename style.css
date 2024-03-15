@@ -21,39 +21,39 @@ footer {
   background-color: black;
 }
 
-#jam {
+/* #jam {
   text-align: right;
-}
+} */
 
 #datatable th {
-    text-align: left;
-  }
-  
-  #datatable td {
-      text-align: left;
-  }
-  
-  #NIM {
-      background-color: rgb(207, 207, 207);
-  }
-  
-  .alertContainer {
-      position: fixed;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999;
-      width: 30%;
-  }
-  
-  .alert {
-      padding: 0;
-      border-radius: 10px;
-  }
-  
-  .alert-heading {
-      background-color: #388E3C;
-      color: white;
+  text-align: left;
+}
+
+#datatable td {
+  text-align: left;
+}
+
+#NIM {
+  background-color: rgb(207, 207, 207);
+}
+
+.alertContainer {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 30%;
+}
+
+.alert {
+  padding: 0;
+  border-radius: 10px;
+}
+
+.alert-heading {
+  background-color: #388E3C;
+  color: white;
   padding: 10px;
   text-align: center;
   border-radius: 10px 10px 0 0;
@@ -79,7 +79,7 @@ footer {
   padding-right: 30px;
 }
 
-#addData{
+#addData {
   background-color: #2D9596;
   border-radius: 30px;
   margin-bottom: 20px;
@@ -88,17 +88,19 @@ footer {
   margin-left: 40px;
 }
 
-#positionAddData{
+#positionAddData {
   padding: 20px;
 }
 
-#inputNIM{
+#inputNIM {
   background-color: #F1FADA;
 }
-#inputnama{
+
+#inputnama {
   background-color: #F1FADA;
 }
-#inputalamat{
+
+#inputalamat {
   background-color: #F1FADA;
 }
 
@@ -107,11 +109,10 @@ footer {
 }
 
 #image {
-  max-width: 30%;
+  max-width: 50%;
 }
 
-#bawahan{
-    background-color: #265073;
-    color: white;
-    font-family: monospace;
-  }
+#bawahan {
+  color: white;
+  font-family: monospace;
+}
