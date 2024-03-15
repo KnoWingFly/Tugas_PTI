@@ -21,6 +21,10 @@ footer {
   background-color: black;
 }
 
+#jam {
+  text-align: right;
+}
+
 #datatable th {
     text-align: left;
   }
@@ -79,6 +83,9 @@ footer {
   background-color: #2D9596;
   border-radius: 30px;
   margin-bottom: 20px;
+  margin-top: 45px;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
 #positionAddData{
