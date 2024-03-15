@@ -11,6 +11,12 @@ body {
   color: #F1FADA;
 }
 
+footer {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 50px;
+  background-color: rgba(211, 211, 211, 0.995);
+}
+
 #header {
   background-color: black;
 }
@@ -87,4 +93,14 @@ body {
 }
 #inputalamat{
   background-color: #F1FADA;
+}
+
+#copyright {
+
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+#image {
+
+  max-width: 30%;
 }
