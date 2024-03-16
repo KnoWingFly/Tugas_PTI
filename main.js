@@ -1,3 +1,13 @@
+window.onload = function() {
+    var myModal = new bootstrap.Modal(document.getElementById('userNameModal'), {});
+    myModal.show();
+
+    document.getElementById('saveButton').addEventListener('click', function() {
+      var userName = document.getElementById('userName').value;
+      document.getElementById('greeting').textContent = 'Hello, ' + userName;
+      myModal.hide();
+    });
+  }
 $(document).ready(function () {
 
     var data = [
@@ -19,31 +29,42 @@ $(document).ready(function () {
     ];
 
     /*----------------------------------------------------------------Alert Functions----------------------------------------------------------------*/
-    var alertTime = new Date();
-
-    function showAlert() {
-        $('#myAlert').slideDown();
+    function hideAllAlerts() {
+        $('#myAlert').hide();
+        $('#myWarningAlert').hide();
+        $('#myWarningAlert1').hide();
     }
-
-    $(document).ready(function () {
-        $('.closeBtn').on('click', function () {
-            $(this).closest('.alert').slideUp();
-        });
-    });
-
-    setInterval(function () {
-        var now = new Date();
-        var diff = Math.floor((now - alertTime) / 1000);
-        if (diff < 60) {
-            document.getElementById("alertTime").innerHTML = diff + " seconds ago~";
-        } else {
-            var minutes = Math.floor(diff / 60);
-            document.getElementById("alertTime").innerHTML = minutes + " minutes ago~";
-        }
-    }, 5000);
+    
+    function showAlert() {
+        hideAllAlerts();
+        $('#myAlert').show();
+        alertTime = new Date();
+        setTimeout(function() {
+            $('#myAlert').hide();
+        }, 5000);
+    }
+    
+    function showWarningAlert() {
+        hideAllAlerts();
+        $('#myWarningAlert1').show();
+        warningAlertTime = new Date();
+        setTimeout(function() {
+            $('#myWarningAlert1').hide();
+        }, 5000); 
+    }
+    
+    function showWarningAlert1() {
+        hideAllAlerts();
+        $('#myWarningAlert').show();
+        warningAlertTime = new Date();
+        setTimeout(function() {
+            $('#myWarningAlert').hide();
+        }, 5000); 
+    }    
     /*----------------------------------------------------------------Add table Functions----------------------------------------------------------------*/
     var table = $("#datatable").DataTable({
         data: data,
+        responsive: true,
         columns: [
             { data: 'NIM' },
             { data: 'nama' },
@@ -52,8 +73,8 @@ $(document).ready(function () {
                 data: null,
                 render: function (data, type, row, meta) {
                     return '<button type="button" class="btn btn-primary editButton" data-index="'
-                        + meta.row + '"><img src="Asset/pencil-square.svg" style="filter: invert(1);"/> Ubah</button>' + "     " +
-                        '<button type="button" class="btn btn-danger deleteButton" data-index="' + meta.row + '"><img src="Asset/eraser-fill.svg" style="filter: invert(1);"/> Hapus</button>';
+                        + meta.row + '"><img src="Asset/pencil-square.svg" style="filter: invert(1);"/><span class="d-none d-sm-inline"> Ubah</span></button>' + "     " +
+                        '<button type="button" class="btn btn-danger deleteButton" data-index="' + meta.row + '"><img src="Asset/eraser-fill.svg" style="filter: invert(1);"/><span class="d-none d-sm-inline"> Hapus</span></button>';
                 }
             }
         ],
@@ -64,27 +85,20 @@ $(document).ready(function () {
         var NIM = $('#inputNIM').val().trim();
         var nama = $('#inputnama').val().trim();
         var alamat = $('#inputalamat').val().trim();
-
+    
         if (!NIM || !nama || !alamat) {
-            alert('Tolong isi semua form');
+            showWarningAlert();
             return;
         }
-
+    
         data.push({ NIM: NIM, nama: nama, alamat: alamat });
         table.clear().rows.add(data).draw();
         showAlert();
-
+    
         $('#inputNIM').val('');
         $('#inputnama').val('');
         $('#inputalamat').val('');
     });
-
-    $('.btn-warning').click(function () {
-        $('#inputNIM').val('');
-        $('#inputnama').val('');
-        $('#inputalamat').val('');
-    });
-
     /*----------------------------------------------------------------Edit & Delete Functions----------------------------------------------------------------*/
     $('body').on('click', '.deleteButton', function () {
         var index = $(this).data('index');
@@ -107,19 +121,31 @@ $(document).ready(function () {
     /*----------------------------------------------------------------Save Edit data Functions----------------------------------------------------------------*/
     $('#savedata').click(function () {
         var item = data[indexToEdit];
-
+    
         item.nama = $('#nama').val().trim();
         item.alamat = $('#alamat').val().trim();
-
+    
         if (!item.NIM || !item.nama || !item.alamat) {
-            alert('Tolong jangan kosongkan data');
+            showWarningAlert1();
             return;
         }
-
+        $('#deletealert').hide();
+        $('#updatealert').show();
+        setTimeout(function() {
+            $('#updatealert').hide();
+        }, 5000);
+    
         $('#editModal').modal('hide');
         table.clear().rows.add(data).draw();
     });
 
+    $('#datatable tbody').on('click', '.deleteButton', function () {
+        $('#updatealert').hide();
+        $('#deletealert').show();
+        setTimeout(function() {
+            $('#deletealert').hide();
+        }, 5000); 
+    });
 
     /*----------------------------------------------------------------Time Functions----------------------------------------------------------------*/
     function Time() {
