@@ -1,0 +1,21 @@
+body {
+    background-image: url('Asset/photo-1519120944692-1a8d8cfc107f.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: monospace;
+}
+
+#success {
+    color: #282A3A;
+}
+
+.progress-bar {
+    transition: width 2s;
+}
+
+.progress {
+    height: 2rem; 
+  }
