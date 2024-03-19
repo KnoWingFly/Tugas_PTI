@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Financial Goal Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylegoals.css">
+</head>
+<body>
+
+<!---------------------------------------------------------------------------------------------Navigation bar--------------------------------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto me-3">
+              <li class="nav-item">
+                <a class="nav-link" href="main.html">Main</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="income.html">Income</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="outcome.html">Outcome</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page"href="goals.html">Goals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+   <!---------------------------------------------------------------------------------------------Modal Finish--------------------------------------------------------------------------------------------->
+   <div class="container">  
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmModalLabel">Confirm Goal Completion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Do you want to decrease your balance by the goal amount?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary" id="confirmBtn">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>  
+  
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 mt-4 mb-4">
+        <h1>Goals</h1>
+        <div class="form-group">
+            <label for="goal">Goal:</label>
+            <input type="text" class="form-control form-control-lg" id="goal" placeholder="Enter your financial goal">
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" class="form-control form-control-lg" id="amount" placeholder="Enter the amount">
+        </div>
+        <div class="d-grid justify-content-end mt-4">
+        <button class="btn btn-primary btn-lg" id="saveGoal">Save Goal</button>
+        </div>
+        <hr>
+      </div>
+    </div>
+  
+    <div id="success">
+      <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="successModalLabel"><strong>Goals Success</strong>
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="Asset/check.gif" class="img-fluid" style="max-width: 50%;">
+              <p class="mt-3 mb-0">Press Close, to continue</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div id="Failed">
+      <div class="modal fade" id="failedModal" tabindex="-1" aria-labelledby="failedModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="failedModalLabel">Goals Failed</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="Asset/fail.gif" class="img-fluid" style="max-width: 50%;">
+              <p class="mt-3 mb-0">Please fill out the form completely to proceed with the
+                transaction.
+              </p>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">
+                Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div id="Max">
+      <div class="modal fade" id="maxModal" tabindex="-1" aria-labelledby="maxModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="maxModalLabel">Maximum Goals</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="Asset/no-money.png" class="img-fluid" style="max-width: 50%;">
+              <p class="mt-3 mb-0">Don't be hedonistic</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">
+                Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>    
+  
+ <!---------------------------------------------------------------------------------------------Framework--------------------------------------------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+
+    <script>
+//---------------------------------------------------------------------------------------------Name in Hello -----------------------------------------------------------------------------------------//
+        window.onload = function () {
+        var username = localStorage.getItem('username');
+        if (username) {
+          document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
+        }
+      }
+
+//---------------------------------------------------------------------------------------------Make Goal-----------------------------------------------------------------------------------------//
+  $(document).ready(function() {
+    var goals = JSON.parse(localStorage.getItem('goals')) || [];
+    var currentAmount = Number(localStorage.getItem('balance')) || 0;
+
+    goals.forEach(function(goal, index) {
+        displayGoal(goal, index);
+    });
+
+    $('#saveGoal').click(function() {
+    var goalName = $('#goal').val().trim(); 
+    var goalAmount = $('#amount').val().trim(); 
+
+    if (goalName === "" || goalAmount === "") {
+        $('#failedModal').modal('show');
+    } else {
+        if (goals.length < 3) {
+            var goal = {
+                name: goalName,
+                amount: goalAmount,
+                color: getRandomColor(),
+                finished: false
+            };
+            goals.push(goal);
+            localStorage.setItem('goals', JSON.stringify(goals));
+            displayGoal(goal, goals.length - 1);
+
+            $('#successModal').modal('show');
+        } else {
+           $('#maxModal').modal('show');
+        }
+    }
+});
+
+    setInterval(function() {
+        goals.forEach(function(goal, index) {
+            if (currentAmount < goal.amount && !goal.finished) {
+                var progress = (currentAmount / goal.amount) * 100;
+                $('#progressBar' + index).css('width', progress + '%').attr('aria-valuenow', currentAmount);
+            } else if (currentAmount >= goal.amount && !goal.finished) {
+                $('#progressBar' + index).css('width', '100%').attr('aria-valuenow', goal.amount);
+                if ($('#finishGoal' + index).length === 0) {
+                    $('#goalContainer' + index).append('<button class="btn btn-success" id="finishGoal' + index + '" data-toggle="modal" data-target="#confirmModal">Finish Goal</button>');
+                }
+            }
+        });
+    }, 1000);
+
+  //---------------------------------------------------------------------------------------------Delete & Finsih -----------------------------------------------------------------------------------------//
+    $(document).on('click', '[id^=deleteGoal]', function() {
+      var index = $(this).attr('id').replace('deleteGoal', '');
+      goals.splice(index, 1);
+      localStorage.setItem('goals', JSON.stringify(goals));
+      renderGoals(); 
+  });
+
+    $(document).on('click', '[id^=finishGoal]', function() {
+        var index = $(this).attr('id').replace('finishGoal', '');
+        $('#confirmBtn').data('goalIndex', index);
+        $('#close').data('goalIndex', index); 
+        $('#confirmModal').modal('show'); 
+    });
+
+//---------------------------------------------------------------------------------------------Confirm Goal Completion-----------------------------------------------------------------------------------------//
+    $('#confirmModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); 
+        var index = button.data('goalIndex'); 
+
+        var modal = $(this);
+        modal.find('.btn-secondary').data('goalIndex', index); 
+        modal.find('#close').data('goalIndex', index);  
+    });
+
+    $(document).on('click', '.close', function() {
+        $('#confirmModal').modal('hide'); 
+    });
+
+    $('#confirmBtn').click(function() {
+    var index = $(this).data('goalIndex');
+    goals[index].finished = true;
+    currentAmount -= goals[index].amount;
+    localStorage.setItem('balance', currentAmount);
+
+    var transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    transactions.push({ 
+        name: goals[index].name, 
+        nominal: goals[index].amount, 
+        type: 'goals', 
+        transaction: 'outcome' 
+    });
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+
+    goals.splice(index, 1); 
+    localStorage.setItem('goals', JSON.stringify(goals)); 
+    $('#confirmModal').modal('hide'); 
+
+    renderGoals(); // Call a function to re-render all goals
+
+    window.location.href = 'main.html';
+});
+
+
+    $(document).on('click', '.btn-secondary', function() {
+        var index = $(this).data('goalIndex');
+        goals.splice(index, 1); 
+        localStorage.setItem('goals', JSON.stringify(goals)); 
+        $('#goalContainer' + index).remove();
+        $('#confirmModal').modal('hide'); 
+        renderGoals();
+    });
+
+    function renderGoals() {
+    $('[id^=goalContainer]').remove();
+     goals.forEach(function(goal, index) {
+        displayGoal(goal, index);
+    });
+}
+
+  //--------------------------------------------------------------------------------------------Display Goals-----------------------------------------------------------------------------------------//
+  function displayGoal(goal, index) {
+    $('.container').append(`
+        <div class="row" id="goalContainer${index}">
+            <div class="col-12">
+                <h2>${goal.name}</h2>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 0%; background-color: ${goal.color};" id="progressBar${index}"></div>
+                </div>
+                <p>Amount: ${goal.amount}</p>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-danger" id="deleteGoal${index}">Delete</button>
+                    <button class="btn btn-primary" id="finishGoal${index}">Finish</button>
+                </div>
+            </div>
+        </div>
+    `);
+}
+
+//---------------------------------------------------------------------------------------------Random color progress-----------------------------------------------------------------------------------------//
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+});
+
+    </script>
+</body>
+</html>
