@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!--------------------------------------------------------------------------------------------- Modal name --------------------------------------------------------------------------------------------->
 <div class="modal fade" id="userNameModal" tabindex="-1" aria-labelledby="userNameModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -34,19 +35,21 @@
       </div>
     </div>
   </div>
-    <!--------------------------------------------------------------------------------------------- Header --------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------- Header --------------------------------------------------------------------------------------------->
     <div class="container-fluid mt-5">
-        <div class="header text-center text-md-start">
-          <h1><strong>MAHASISWA</strong></h1>
+        <div class="header">
+            <div class="header1 text-center text-md-start">
+                <h1><strong>MAHASISWA</strong></h1>
+            </div>
+        
+            <div class="second-header mb-5">
+                <div id="jam" class="row">
+                    <h1 id="greeting" class="col-12 col-md-6 text-center text-md-start"><strong>Hello...</strong></h1>
+                    <span id="clock" class="col-12 col-md-6 text-center text-md-end h1"></span>
+                </div>
+            </div>
         </div>
-      
-        <div class="second-header mb-5">
-          <div id="jam" class="row">
-            <h1 id="greeting" class="col-12 col-md-6 text-center text-md-start"><strong>Hello...</strong></h1>
-            <span id="clock" class="col-12 col-md-6 text-center text-md-end h1"></span>
-          </div>
-        </div>
-      </div>
+    </div>
     <!--------------------------------------------------------------------------------------------- Tabel --------------------------------------------------------------------------------------------->
     <div class="table-responsive">
         <table id="datatable" class="table table-striped" style="width: 100%">
@@ -71,7 +74,7 @@
                 <div class="alertContainer collapse" id="myWarningAlert">
                     <div class="alert alert-warning">
                         <div class="d-flex justify-content-between align-items-center alert-heading">
-                            <h4 style="margin-bottom: 0;">Warning!</h4>
+                            <h4 style="margin-bottom: 0;"><img src="Asset/warning.png">Warning!</h4>
                             <div>
                             </div>
                         </div>
@@ -140,7 +143,7 @@
 
     <hr>
 
-    <!--------------------------------------------------------------------------------------------- Form --------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------- Form --------------------------------------------------------------------------------------------->
     <div id="addData">
         <div id="positionAddData">
             <div class="row mt-2">
@@ -198,7 +201,7 @@
     <div class="alertContainer collapse" id="myAlert">
         <div class="alert alert-success">
             <div class="d-flex justify-content-between align-items-center alert-heading">
-                <h4 style="margin-bottom: 0;">Added!</h4>
+                <h4 style="margin-bottom: 0;"><img src="Asset/checked.png">Added!</h4>
                 <div>
                 </div>
             </div>
@@ -209,7 +212,7 @@
     <div class="alertContainer collapse" id="myWarningAlert1">
         <div class="alert alert-warning">
             <div class="d-flex justify-content-between align-items-center alert-heading">
-                <h4 style="margin-bottom: 0;">Warning!</h4>
+                <h4 style="margin-bottom: 0;"><img src="Asset/warning.png">Warning!</h4>
                 <div>
                 </div>
             </div>
@@ -220,7 +223,7 @@
     <div class="alertContainer collapse" id="updatealert">
         <div class="alert alert-warning">
             <div class="d-flex justify-content-between align-items-center alert-heading">
-                <h4 style="margin-bottom: 0;">Updated!</h4>
+                <h4 style="margin-bottom: 0;"><img src="Asset/updated.png">Updated!</h4>
                 <div>
                 </div>
             </div>
@@ -231,7 +234,7 @@
     <div class="alertContainer collapse" id="deletealert">
         <div class="alert alert-warning">
             <div class="d-flex justify-content-between align-items-center alert-heading">
-                <h4 style="margin-bottom: 0;">Deleted!</h4>
+                <h4 style="margin-bottom: 0;"><img src="Asset/delete.png">Deleted!</h4>
                 <div>
                 </div>
             </div>
@@ -281,7 +284,7 @@
             </div>
         </div>
     </footer>
-    <!---------------------------------------------------------------------------------------------framework & connct main.js--------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------framework & connct main.js--------------------------------------------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="main.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>

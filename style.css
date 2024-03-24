@@ -1,19 +1,18 @@
 .container-fluid {
-  max-width: 90%;
+  max-width: 100%;
 }
 
 body {
   display: flex;
   flex-direction: column;
   font-family: monospace;
-  margin-top: 50px;
+  margin-top: 0;
   background-image: url('background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   color: #F1FADA;
   min-height: 100vh;
 }
-
 
 footer {
   margin-top: auto;
@@ -25,10 +24,12 @@ footer {
 
 #datatable th {
   text-align: left;
+  background-color: #2D9596;
 }
 
 #datatable td {
   text-align: left;
+  background-color: white;
 }
 
 #NIM {
@@ -60,16 +61,20 @@ footer {
 }
 
 .close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  line-height: 1;
-  color: white;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-  padding: 0;
-  appearance: none;
+    color: #ffffff;
+    background-color: #ff6347;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.close:hover {
+  opacity: 1;
 }
 
 .mb-0 {
@@ -113,4 +118,37 @@ footer {
 #bawahan {
   color: white;
   font-family: monospace;
+}
+
+.modal{
+  color: black;
+}
+
+#myAlert .alert-heading {
+  background-color: #388E3C; 
+}
+
+#myWarningAlert1 .alert-heading {
+  background-color: #FFA500; 
+}
+
+#updatealert .alert-heading {
+  background-color: #4B0082; 
+}
+
+#deletealert .alert-heading {
+  background-color: #B22222; 
+}
+
+#myWarningAlert .alert-heading{
+  background-color: #FFA500; 
+}
+
+.alert {
+  background-color: white;
+}
+
+.alert-heading img {
+  width: 20px; 
+  height: 20px; 
 }
