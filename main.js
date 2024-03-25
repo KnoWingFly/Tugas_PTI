@@ -183,3 +183,18 @@ $(document).ready(function () {
 
     Time();
 });
+// Select the reset button using its class
+var resetButton = document.querySelector('.btn.btn-dark.mt-2');
+
+// Add a click event listener to the reset button
+resetButton.addEventListener('click', function() {
+    // Select the form fields
+    var inputNIM = document.getElementById('inputNIM');
+    var inputNama = document.getElementById('inputnama');
+    var inputAlamat = document.getElementById('inputalamat');
+
+    // Reset the form fields
+    inputNIM.value = '';
+    inputNama.value = '';
+    inputAlamat.value = '';
+});
